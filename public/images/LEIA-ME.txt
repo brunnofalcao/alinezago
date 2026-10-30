@@ -1,0 +1,11 @@
+Coloque aqui as fotos finais com estes nomes (o site já aponta para eles):
+
+isotipo.png        logo (isotipo, fundo transparente)
+hero-home.jpg      retrato principal da home (ideal 1600x1200 ou maior, formato 4:3)
+hero-sobre.jpg     foto da página Sobre (16:10)
+atendimentos.jpg   foto da página Atendimentos (4:5)
+palestra-1.jpg ... palestra-6.jpg   fotos de palestras (quadradas, 1200x1200)
+
+Enquanto os arquivos não existirem, o site usa as fotos originais do Wix como reserva
+e, se também falharem, mostra um bloco neutro com a legenda da imagem.
+Para baixar as fotos do Wix automaticamente: npm run assets:wix
