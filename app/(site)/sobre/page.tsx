@@ -28,10 +28,10 @@ export default function SobrePage() {
           </div>
           <aside className="lg:col-span-4 lg:col-start-9">
             <div className="border border-taupe-line p-6">
-              <p className="font-display text-sm font-medium tracking-[0.12em] text-taupe-deep">Registro profissional</p>
-              <p className="mt-2 text-lg text-grafite">{site.name}</p>
-              <p className="text-pedra-600">{site.crm}</p>
-              <p className="mt-6 font-display text-sm font-medium tracking-[0.12em] text-taupe-deep">Atendimento</p>
+              <p className="eyebrow">Registro profissional</p>
+              <p className="mt-2 text-lg text-grafite">{site.fullName}</p>
+              <p className="text-pedra-600">{site.tagline} · {site.crm}</p>
+              <p className="eyebrow mt-6">Atendimento</p>
               <ul className="mt-2 space-y-1 text-pedra-600">
                 {site.cities.map((c) => <li key={c}>{c}</li>)}
               </ul>

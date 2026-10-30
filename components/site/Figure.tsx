@@ -36,6 +36,7 @@ export function Figure({ src, alt, className, imgClassName, label, priority }: P
         src={current}
         alt={alt}
         loading={priority ? "eager" : "lazy"}
+        fetchPriority={priority ? "high" : "auto"}
         decoding="async"
         onError={() => setIdx((i) => i + 1)}
         className={cn("h-full w-full object-cover", imgClassName)}

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { LogOut } from "lucide-react";
 import { Logo } from "@/components/site/Logo";
 import { cn } from "@/lib/utils";
 import { ShellNav } from "@/components/app/ShellNav";
@@ -8,13 +9,19 @@ export type NavItem = { href: string; label: string; icon: string };
 export function Shell({ children, nav, title, user, badge }: { children: React.ReactNode; nav: NavItem[]; title: string; user: { name: string; email: string }; badge?: string }) {
   return (
     <div className="min-h-screen bg-creme lg:grid lg:grid-cols-[260px_1fr]">
-      <aside className="flex flex-col border-b border-taupe-line bg-grafite text-marfim lg:min-h-screen lg:border-b-0">
-        <div className="flex items-center justify-between px-5 py-5 lg:block">
-          <Logo dark compact />
-          <div className="hidden pt-4 lg:block">
-            <p className="font-display text-sm font-medium tracking-[0.12em] text-taupe">{title}</p>
-            {badge && <span className="badge mt-2 bg-marfim/10 text-marfim/80">{badge}</span>}
+      <aside className="flex flex-col bg-grafite pt-safe text-marfim lg:sticky lg:top-0 lg:h-screen">
+        <div className="flex items-center justify-between gap-3 px-4 py-3 lg:block lg:px-5 lg:py-6">
+          <div className="flex items-center gap-3 lg:block">
+            <Logo dark compact size="sm" className="lg:hidden" />
+            <Logo dark size="md" className="hidden lg:inline-flex" />
+            <div className="lg:pt-5">
+              <p className="font-display text-sm font-medium tracking-[0.12em] text-taupe">{title}</p>
+              {badge && <span className="badge mt-1 hidden bg-marfim/10 text-marfim/80 lg:mt-2 lg:inline-flex">{badge}</span>}
+            </div>
           </div>
+          <form action="/auth/sair" method="post" className="lg:hidden">
+            <button className="flex h-11 w-11 items-center justify-center text-marfim/70" aria-label="Sair da conta"><LogOut size={20} /></button>
+          </form>
         </div>
         <ShellNav items={nav} />
         <div className="mt-auto hidden border-t border-marfim/10 p-5 text-sm lg:block">
@@ -26,7 +33,7 @@ export function Shell({ children, nav, title, user, badge }: { children: React.R
         </div>
       </aside>
       <div className="min-w-0">
-        <div className="container-site py-8 lg:py-10">{children}</div>
+        <div className="container-site py-6 pb-[calc(2rem+var(--safe-bottom))] lg:py-10">{children}</div>
       </div>
     </div>
   );
@@ -34,7 +41,7 @@ export function Shell({ children, nav, title, user, badge }: { children: React.R
 
 export function PageTitle({ title, text, action }: { title: string; text?: string; action?: React.ReactNode }) {
   return (
-    <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+    <div className="mb-6 flex flex-col gap-4 sm:mb-8 sm:flex-row sm:items-end sm:justify-between">
       <div>
         <h1 className="text-d-3 font-light text-grafite">{title}</h1>
         {text && <p className="mt-2 max-w-prose text-pedra-600">{text}</p>}
@@ -80,12 +87,12 @@ export function Empty({ title = "Não há dados disponíveis ainda.", text, acti
 
 export function ConfigNotice({ title = "Falta configuração.", text, href = "/admin/configuracoes" }: { title?: string; text: string; href?: string }) {
   return (
-    <div className="flex flex-col gap-2 border border-aviso/40 bg-aviso/5 p-5 sm:flex-row sm:items-center sm:justify-between">
+    <div className="flex flex-col gap-3 border border-aviso/40 bg-aviso/5 p-5 sm:flex-row sm:items-center sm:justify-between">
       <div>
         <p className="font-display font-medium text-grafite">{title}</p>
         <p className="text-sm text-pedra-600">{text}</p>
       </div>
-      <Link href={href} className="btn btn-sm btn-outline">Ver configurações</Link>
+      <Link href={href} className="btn btn-sm btn-outline shrink-0">Ver configurações</Link>
     </div>
   );
 }

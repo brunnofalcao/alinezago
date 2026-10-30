@@ -1,6 +1,6 @@
-Coloque aqui as fotos finais com estes nomes (o site já aponta para eles):
+Coloque aqui as fotos finais com estes nomes (o site já aponta para eles).
+As logomarcas oficiais já estão em /public/brand (não precisa mexer).
 
-isotipo.png        logo (isotipo, fundo transparente)
 hero-home.jpg      retrato principal da home (ideal 1600x1200 ou maior, formato 4:3)
 hero-sobre.jpg     foto da página Sobre (16:10)
 atendimentos.jpg   foto da página Atendimentos (4:5)

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg data-bbox="95 248.75 311.115 82.5" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" data-type="ugc">
+    <g stroke-linejoin="round" stroke-linecap="round" stroke-width="12" stroke="#EFE9DF">
+        <path d="M95 290c0-55 60-55 70 0s-50 55-70 0" fill="none"/>
+        <path d="M175 290c0-55 60-55 70 0s-50 55-70 0" fill="none"/>
+        <path d="M255 290c0-55 60-55 70 0s-50 55-70 0" fill="none"/>
+        <path d="M335 290c0-55 60-55 70 0s-50 55-70 0" fill="none"/>
+        <path d="M140 290c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10 10 4.477 10 10" fill="none"/>
+        <path d="M220 290c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10 10 4.477 10 10" fill="none"/>
+        <path d="M300 290c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10 10 4.477 10 10" fill="none"/>
+        <path d="M380 290c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10 10 4.477 10 10" fill="none"/>
+    </g>
+</svg>

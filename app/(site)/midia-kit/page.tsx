@@ -23,10 +23,10 @@ export default function MidiaKitPage() {
     <>
       <section className="container-site grid gap-10 pb-16 pt-10 lg:grid-cols-12 lg:pt-16">
         <div className="lg:col-span-6">
-          <p className="font-display text-sm font-medium tracking-[0.12em] text-taupe-deep">Mídia kit</p>
+          <p className="eyebrow">Mídia kit</p>
           <h1 className="mt-5 text-d-1 font-light text-grafite">{mk.headline}</h1>
           <p className="mt-7 max-w-prose text-lead text-pedra-600">{mk.intro}</p>
-          <div className="mt-9 flex flex-wrap gap-3">
+          <div className="mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:flex-wrap">
             <a href="#proposta" className="btn btn-lg btn-primary">Solicitar proposta</a>
             <a href="#materiais" className="btn btn-lg btn-outline">Bio e fotos oficiais</a>
           </div>
@@ -132,9 +132,15 @@ export default function MidiaKitPage() {
               <ul className="mt-3 flex flex-wrap gap-3">
                 {[site.images.heroHome, site.images.heroSobre, ...site.images.palestras].map((img, i) => (
                   <li key={img.local}>
-                    <a href={img.local} download className="btn btn-sm btn-outline">Foto {i + 1}</a>
+                    <a href={`/api/foto?f=${encodeURIComponent(img.local.replace("/images/", ""))}`} className="btn btn-sm btn-outline">Foto {i + 1}</a>
                   </li>
                 ))}
+                <li>
+                  <a href={site.brand.logoHorizontalEscuro.replace(".png", "-lg.png")} download className="btn btn-sm btn-outline">Logo horizontal</a>
+                </li>
+                <li>
+                  <a href={site.brand.logoVerticalEscuro} download className="btn btn-sm btn-outline">Logo vertical</a>
+                </li>
               </ul>
               <p className="mt-3 text-sm text-grafite/60">Uso autorizado apenas para divulgação de eventos e conteúdos com participação da Dra. Aline Zago.</p>
             </div>

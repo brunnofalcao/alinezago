@@ -28,6 +28,10 @@ Next.js 15 (App Router) + Tailwind + Supabase (Auth e banco) + Resend (e-mail) +
 8. **Fotos**: `npm run assets:wix` baixa as fotos do site antigo para `public/images`. Troque pelos arquivos finais mantendo os nomes.
 9. **Domínio**: aponte o DNS para a Vercel e atualize `NEXT_PUBLIC_SITE_URL`.
 
+## Identidade visual
+
+`public/brand/` tem a logomarca oficial trimada (horizontal e vertical, versão escura e clara), o isotipo em 3 cores e os ícones de linha do método em `public/brand/icons/` (também como componentes em `components/site/BrandIcons.tsx`). Favicon, ícone iOS e imagem de compartilhamento (Open Graph) estão em `app/` e saem do isotipo. Tipografia: Jost (display, alinhada ao logotipo) e Inter (texto).
+
 ## Onde editar conteúdo
 
 `content/site.ts`: todos os textos, FAQ, temas e formatos do mídia kit, números (vazio aparece como "a confirmar"), marcas convidantes (lista vazia esconde a seção) e os caminhos das fotos.

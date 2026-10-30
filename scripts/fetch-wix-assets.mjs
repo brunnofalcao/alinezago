@@ -8,7 +8,6 @@ import { join } from "node:path";
 
 const base = "https://static.wixstatic.com/media/";
 const files = {
-  "isotipo.png": "5ede7b_2bad74d49f934f11ab56fd7803216d8c~mv2.png",
   "hero-home.jpg": "5ede7b_7408a036594d4eb897d72d26364af5df~mv2.jpg",
   "hero-sobre.jpg": "5ede7b_cd0285386bad4499a1f25fbcacd70d09~mv2.jpg",
   "atendimentos.jpg": "5ede7b_53bef4103a0f4692bae723e6791c422a~mv2.jpg",

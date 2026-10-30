@@ -1,20 +1,20 @@
 import Link from "next/link";
 import { site } from "@/content/site";
-import { Figure } from "@/components/site/Figure";
 import { cn } from "@/lib/utils";
 
-export function Logo({ dark = false, compact = false }: { dark?: boolean; compact?: boolean }) {
+type Props = { dark?: boolean; compact?: boolean; className?: string; size?: "sm" | "md" | "lg" };
+
+/**
+ * Logomarca oficial (PNG trimado em /public/brand).
+ * dark = versão clara para fundos escuros. compact = só o isotipo.
+ */
+export function Logo({ dark = false, compact = false, className, size = "md" }: Props) {
+  const h = { sm: "h-8", md: "h-10 sm:h-11", lg: "h-14 sm:h-16" }[size];
+  const src = compact ? (dark ? site.brand.isotipoClaro : site.brand.isotipoEscuro) : dark ? site.brand.logoHorizontalClaro : site.brand.logoHorizontalEscuro;
   return (
-    <Link href="/" className="group flex items-center gap-3" aria-label={`${site.name}, página inicial`}>
-      <span className={cn("flex h-11 w-11 items-center justify-center", dark ? "bg-marfim" : "bg-grafite")}>
-        <Figure src={site.images.isotipo} alt="" className="h-7 w-7 bg-transparent" imgClassName="object-contain" label="" />
-      </span>
-      {!compact && (
-        <span className="leading-tight">
-          <span className={cn("block font-display text-[17px] font-medium tracking-[0.08em]", dark ? "text-marfim" : "text-grafite")}>{site.name}</span>
-          <span className={cn("block text-xs tracking-wide", dark ? "text-marfim/70" : "text-pedra")}>{site.role}</span>
-        </span>
-      )}
+    <Link href="/" className={cn("inline-flex shrink-0 items-center", className)} aria-label={`${site.fullName}, página inicial`}>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={src} alt={`${site.fullName}, ${site.tagline}`} className={cn(h, "w-auto")} decoding="async" fetchPriority="high" />
     </Link>
   );
 }

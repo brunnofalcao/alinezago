@@ -67,7 +67,7 @@ export default async function AulaAdmin({ params, searchParams }: { params: Prom
                         {statuses.map(([s, l]) => (
                           <form key={s} action={setAttendance}>
                             <input type="hidden" name="class_id" value={c.id} /><input type="hidden" name="profile_id" value={m.id} /><input type="hidden" name="status" value={s} />
-                            <button className={`h-8 w-8 border text-xs font-semibold ${a?.status === s ? (s === "presente" ? "border-ok bg-ok text-white" : s === "ausente" ? "border-erro bg-erro text-white" : "border-aviso bg-aviso text-white") : "border-taupe-line bg-white text-pedra-600 hover:border-grafite"}`} aria-label={`Marcar ${s} para ${m.full_name || m.email}`} aria-pressed={a?.status === s}>{l}</button>
+                            <button className={`h-10 w-10 border text-xs font-semibold sm:h-8 sm:w-8 ${a?.status === s ? (s === "presente" ? "border-ok bg-ok text-white" : s === "ausente" ? "border-erro bg-erro text-white" : "border-aviso bg-aviso text-white") : "border-taupe-line bg-white text-pedra-600 hover:border-grafite"}`} aria-label={`Marcar ${s} para ${m.full_name || m.email}`} aria-pressed={a?.status === s}>{l}</button>
                           </form>
                         ))}
                       </div>

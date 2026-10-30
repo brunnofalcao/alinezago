@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg data-bbox="100 100 312 312" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" data-type="ugc">
+    <g stroke-linejoin="round" stroke-linecap="round" stroke-width="12" stroke="#EFE9DF">
+        <path d="M340 220c0 66.274-53.726 120-120 120s-120-53.726-120-120 53.726-120 120-120 120 53.726 120 120" fill="none"/>
+        <path d="m310 310 102 102" fill="none"/>
+        <path d="M140 230h45l20-30 25 60 25-45 20 20h25" fill="none"/>
+        <path d="M170 150v-20" fill="none"/>
+        <path d="M160 140h-20" fill="none"/>
+    </g>
+</svg>

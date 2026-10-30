@@ -5,7 +5,9 @@
  */
 export const site = {
   name: "Dra. Aline Zago",
+  fullName: "Dra. Aline Ane Zago",
   shortName: "Aline Zago",
+  tagline: "Medicina e Saúde",
   role: "Médica, palestrante e empresária",
   crm: "CRM 4370",
   description:
@@ -15,8 +17,16 @@ export const site = {
   instagram: "https://www.instagram.com/draalinezago/",
   youtube: "https://www.youtube.com/@draalinezago",
   cities: ["Online para todo o Brasil", "Brasília, DF", "Porto Velho, RO"],
+  brand: {
+    isotipoClaro: "/brand/isotipo-claro.png",
+    isotipoEscuro: "/brand/isotipo-escuro.png",
+    isotipoTaupe: "/brand/isotipo-taupe.png",
+    logoHorizontalEscuro: "/brand/logo-horizontal-escuro.png",
+    logoHorizontalClaro: "/brand/logo-horizontal-claro.png",
+    logoVerticalEscuro: "/brand/logo-vertical-escuro.png",
+    logoVerticalClaro: "/brand/logo-vertical-claro.png",
+  },
   images: {
-    isotipo: { local: "/images/isotipo.png", remote: "https://static.wixstatic.com/media/5ede7b_2bad74d49f934f11ab56fd7803216d8c~mv2.png" },
     heroHome: { local: "/images/hero-home.jpg", remote: "https://static.wixstatic.com/media/5ede7b_7408a036594d4eb897d72d26364af5df~mv2.jpg" },
     heroSobre: { local: "/images/hero-sobre.jpg", remote: "https://static.wixstatic.com/media/5ede7b_cd0285386bad4499a1f25fbcacd70d09~mv2.jpg" },
     atendimentos: { local: "/images/atendimentos.jpg", remote: "https://static.wixstatic.com/media/5ede7b_53bef4103a0f4692bae723e6791c422a~mv2.jpg" },

@@ -11,10 +11,10 @@ export default function ComunidadePage() {
     <>
       <section className="container-site pb-16 pt-10 lg:pt-16">
         <div className="max-w-3xl">
-          <p className="font-display text-sm font-medium tracking-[0.12em] text-taupe-deep">Comunidade</p>
-          <h1 className="mt-5 text-d-1 font-light text-grafite">{site.comunidade.title}</h1>
+          <p className="eyebrow">Comunidade</p>
+          <h1 className="mt-4 text-d-1 font-light text-grafite">{site.comunidade.title}</h1>
           <p className="mt-7 max-w-prose text-lead text-pedra-600">{site.comunidade.text}</p>
-          <div className="mt-9 flex flex-wrap gap-3">
+          <div className="mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:flex-wrap">
             <Link href="/cadastro" className="btn btn-lg btn-primary">Solicitar acesso</Link>
             <Link href="/entrar" className="btn btn-lg btn-outline">Já tenho acesso</Link>
           </div>

@@ -4,6 +4,7 @@ import { Figure } from "@/components/site/Figure";
 import { Section, Heading } from "@/components/site/Section";
 import { Faq } from "@/components/site/Faq";
 import { CtaConsulta } from "@/components/site/Cta";
+import { metodoIcons } from "@/components/site/BrandIcons";
 import { site } from "@/content/site";
 import { whatsappLink } from "@/lib/utils";
 
@@ -14,21 +15,21 @@ export default function HomePage() {
     <>
       {/* Hero */}
       <section className="overflow-hidden">
-        <div className="container-site grid items-center gap-10 pb-20 pt-10 lg:grid-cols-12 lg:gap-6 lg:pt-16">
-          <div className="lg:col-span-5">
-            <p className="font-display text-sm font-medium tracking-[0.12em] text-taupe-deep">Médica. Atendimento online para todo o Brasil.</p>
-            <h1 className="mt-5 text-d-1 font-light text-grafite">{site.hero.title}</h1>
-            <p className="mt-7 max-w-prose text-lead text-pedra-600">{site.hero.text}</p>
-            <div className="mt-9 flex flex-wrap gap-3">
+        <div className="container-site grid items-center gap-8 pb-16 pt-8 sm:pb-20 sm:pt-12 lg:grid-cols-12 lg:gap-10 lg:pt-16">
+          <div className="lg:col-span-6">
+            <p className="eyebrow reveal reveal-1">Médica. Atendimento online para todo o Brasil.</p>
+            <h1 className="reveal reveal-2 mt-4 text-d-1 font-light text-grafite sm:mt-5">{site.hero.title}</h1>
+            <p className="reveal reveal-3 mt-5 max-w-prose text-lead text-pedra-600 sm:mt-7">{site.hero.text}</p>
+            <div className="reveal reveal-4 mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:flex-wrap">
               <a href={whatsappLink(site.whatsapp, "Olá, Dra. Aline. Quero agendar uma consulta online.")} target="_blank" rel="noreferrer" className="btn btn-lg btn-primary">
                 {site.hero.cta}
               </a>
               <a href="#metodo" className="btn btn-lg btn-outline">{site.hero.ctaSecondary}</a>
             </div>
           </div>
-          <div className="relative lg:col-span-7">
-            <Figure src={site.images.heroHome} alt="Dra. Aline Zago, médica" className="aspect-[4/5] sm:aspect-[5/4] lg:aspect-[4/3]" label="Foto principal (hero)" priority />
-            <div className="bg-taupe p-6 sm:absolute sm:-bottom-8 sm:-left-8 sm:max-w-xs">
+          <div className="reveal reveal-2 relative lg:col-span-6">
+            <Figure src={site.images.heroHome} alt="Dra. Aline Zago, médica" className="aspect-[4/5] sm:aspect-[5/4] lg:aspect-[4/5]" label="Foto principal (hero)" priority />
+            <div className="bg-taupe p-5 sm:absolute sm:-bottom-8 sm:-left-8 sm:max-w-xs sm:p-6">
               <p className="font-display text-lg font-medium text-grafite">Consulta online, de onde você estiver.</p>
               <p className="mt-2 text-sm text-grafite/80">Agenda presencial reduzida em Brasília. Investigação completa já na primeira consulta.</p>
             </div>
@@ -42,7 +43,7 @@ export default function HomePage() {
         <ul className="mt-12 grid gap-10 md:grid-cols-3">
           {site.encontra.map((item, i) => (
             <li key={item} className="border-t-2 border-taupe pt-6">
-              <span className="font-display text-sm font-medium text-taupe-deep">0{i + 1}</span>
+              <span className="eyebrow">0{i + 1}</span>
               <p className="mt-3 text-lg leading-snug text-grafite">{item}</p>
             </li>
           ))}
@@ -75,16 +76,22 @@ export default function HomePage() {
         <div className="container-site">
           <Heading sub="Clareza, método e acompanhamento. Quatro etapas, cada uma com um papel no processo.">Como eu trabalho</Heading>
         </div>
-        <ol className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4">
-          {site.metodo.map((step, i) => (
-            <li key={step.title} className={`flex min-h-[320px] flex-col justify-between p-8 ${ramp[i]}`}>
-              <span className="font-display text-5xl font-light">{i + 1}</span>
-              <div>
-                <h3 className="font-display text-xl font-medium">{step.title}</h3>
-                <p className="mt-3 opacity-80">{step.text}</p>
-              </div>
-            </li>
-          ))}
+        <ol className="mt-10 grid sm:mt-14 sm:grid-cols-2 lg:grid-cols-4">
+          {site.metodo.map((step, i) => {
+            const Icon = metodoIcons[i];
+            return (
+              <li key={step.title} className={`flex flex-col gap-8 p-6 sm:min-h-[340px] sm:justify-between sm:p-8 ${ramp[i]}`}>
+                <div className="flex items-start justify-between">
+                  <span className="font-display text-4xl font-light sm:text-5xl">{i + 1}</span>
+                  <Icon className={`h-16 w-16 sm:h-20 sm:w-20 ${i === 3 ? "text-grafite/70" : "text-taupe"}`} />
+                </div>
+                <div>
+                  <h3 className="font-display text-xl font-medium">{step.title}</h3>
+                  <p className="mt-2 opacity-80 sm:mt-3">{step.text}</p>
+                </div>
+              </li>
+            );
+          })}
         </ol>
       </section>
 
@@ -125,13 +132,13 @@ export default function HomePage() {
       </Section>
 
       {/* Comunidade */}
-      <Section tone="taupe">
+      <Section tone="areia">
         <div className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-6">
             <h2 className="text-d-2 font-light text-grafite">{site.comunidade.title}</h2>
             <p className="mt-5 max-w-prose text-lg text-grafite/80">{site.comunidade.text}</p>
           </div>
-          <div className="flex flex-col justify-end gap-3 sm:flex-row lg:col-span-5 lg:col-start-8 lg:justify-start lg:self-end">
+          <div className="flex flex-col gap-3 sm:flex-row lg:col-span-5 lg:col-start-8 lg:justify-start lg:self-end">
             <Link href="/cadastro" className="btn btn-lg btn-primary">Solicitar acesso</Link>
             <Link href="/entrar" className="btn btn-lg btn-outline">Já sou paciente</Link>
           </div>
